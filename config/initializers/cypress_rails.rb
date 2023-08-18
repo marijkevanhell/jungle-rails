@@ -5,8 +5,6 @@ return unless Rails.env.test?
 
 CypressRails.hooks.before_server_start do
   # Called once, before either the transaction or the server is started
-<<<<<<< HEAD
-=======
   cat1 = Category.find_or_create_by! name: 'Evergreens'
 
   cat1.products.create!({
@@ -25,7 +23,6 @@ CypressRails.hooks.before_server_start do
     quantity: 18,
     price: 24.99
   })
->>>>>>> feature/testing-home-page
 end
 
 CypressRails.hooks.after_transaction_start do
@@ -38,8 +35,6 @@ end
 
 CypressRails.hooks.before_server_stop do
   # Called once, at_exit
-<<<<<<< HEAD
-=======
   DatabaseCleaner.clean
 end
 
@@ -47,5 +42,4 @@ private
 
 def open_asset(file_name)
   File.open(Rails.root.join('db', 'seed_assets', file_name))
->>>>>>> feature/testing-home-page
 end
